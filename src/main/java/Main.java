@@ -1,13 +1,16 @@
-package com.back;
+import com.back.App;
+import com.back.AppContext;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-        new App(new Scanner(System.in))
-                .run();
+
+        AppContext.init();
+        new App().run();
 
     }
     public static void experiment2(){

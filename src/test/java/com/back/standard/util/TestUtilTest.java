@@ -1,4 +1,4 @@
-package com.back;
+package com.back.standard.util;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestUtilTest {
     @Test
-    @DisplayName("com.back.TestUtil.getScanner()")
+    @DisplayName("com.back.standard.util.TestUtil.getScanner()")
     void t1() {
         Scanner sc = TestUtil.genScanner("""
                 등록
@@ -30,7 +30,7 @@ public class TestUtilTest {
     }
 
     @Test
-    @DisplayName("com.back.TestUtil.setOutToByteArray()")
+    @DisplayName("com.back.standard.util.TestUtil.setOutToByteArray()")
     void t2() throws IOException {
         ByteArrayOutputStream outputStream = TestUtil.setOutToByteArray();
 

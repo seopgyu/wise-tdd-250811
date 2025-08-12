@@ -1,33 +1,33 @@
 package com.back;
 
+import com.back.system.SystemController;
+import com.back.domaim.wiseSaying.controller.WiseSayingController;
+
 import java.util.Scanner;
 
 public class App {
     private Scanner sc;
+    private WiseSayingController wiseSayingController;
+    private SystemController systemController;
 
     public App(Scanner sc) {
-        this.sc = sc;
+        this.sc = AppContext.sc;
+        wiseSayingController= AppContext.wiseSayingController;
+        systemController = AppContext.systemController;
     }
 
     public void run() {
         System.out.println("== 명언 앱 ==");
 
-        int lastId = 0;
         while (true) {
             System.out.print("명령) ");
             String cmd = sc.nextLine();
 
             switch (cmd) {
-                case "등록" -> {
-                    System.out.print("명언 : ");
-                    String saying = sc.nextLine();
-                    System.out.print("작가 : ");
-                    String author = sc.nextLine();
-                    lastId++;
-
-                    System.out.println(lastId + "번 명언이 등록되었습니다");
-                }
+                case "등록" -> wiseSayingController.actionAdd();
+                case "목록" -> wiseSayingController.actionList();
                 case "종료" -> {
+                    systemController.actionExit();
                     return;
                 }
             }
